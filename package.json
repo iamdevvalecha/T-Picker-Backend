@@ -2,9 +2,9 @@
   "name": "t-picker-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +22,7 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.7",
     "npm": "^6.13.0",
     "uuid": "^3.3.3"
   }
