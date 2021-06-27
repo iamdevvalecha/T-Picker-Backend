@@ -16,28 +16,28 @@ const productSchema = new mongoose.Schema({
         unique:true,
     },
     price: {
-        type: Number,
-        required:true,
+      type: Number,
+      required: true,
+      maxlength: 32,
+      trim: true
     },
     category: {
-        type: String,
-        required: true,
-        trim: true,
-        maxlength: 32,
-        unique: true,
+      type: ObjectId,
+      ref: "Category",
+      required: true
     },
     stock: {
-        type: Number,
-        required:true,
+      type: Number
     },
     sold: {
-        type: Number,
+      type: Number,
+      default: 0
     },
     photo: {
-        type:String,
-        required: true,
-    },
-},
+      data: Buffer,
+      contentType: String
+    }
+  },
     { timestamps: true });
 
 module.exports = mongoose.model("Product", productSchema);
