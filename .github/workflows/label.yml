@@ -1,6 +1,6 @@
-name: labeler
+name: github
 
-on: [pull_request]
+on: push
 
 jobs:
   labeler:
