@@ -15,6 +15,11 @@
 ```
 npm install
 ```
+### Run The Development Server
+
+Running:
+-   `npm start`
+-   Visit your app in local system [http://localhost:8000](http://localhost:8000).
 
 ## License
 
