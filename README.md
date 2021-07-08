@@ -11,11 +11,11 @@
 * `git clone <repository-url>` this repository.
 * `cd T-Picker-Backend`
 
-### Install dependencies
+### Install dependencies:-
 ```
 npm install
 ```
-### Run The Development Server
+### Run The Development Server:-
 
 Running:
 -   `npm start`
