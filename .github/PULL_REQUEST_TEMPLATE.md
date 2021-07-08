@@ -17,7 +17,7 @@ Fixes #
 
 #### Checklist
 
-- [ ] My branch is up-to-date with the Upstream `development` branch.
+- [ ] My branch is up-to-date with the Upstream `master` branch.
 - [ ] The acceptance, integration, unit tests and linter pass locally with my changes <!-- use `ember test` to run all the tests -->
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] I have added necessary documentation (if appropriate)
