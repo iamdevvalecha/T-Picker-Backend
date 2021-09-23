@@ -8,7 +8,7 @@ exports.signup = (req, res) => {
 
   if (!errors.isEmpty()) {
     return res.status(422).json({
-      error: errors.array()[0].msg,
+      error: errors.array()[0].msg
     });
   }
 
@@ -16,36 +16,37 @@ exports.signup = (req, res) => {
   user.save((err, user) => {
     if (err) {
       return res.status(400).json({
-        err: "NOT able to save user in DB",
+        err: "NOT able to save user in DB"
       });
     }
     res.json({
       name: user.name,
       email: user.email,
-      id: user._id,
+      id: user._id
     });
   });
 };
+
 exports.signin = (req, res) => {
   const errors = validationResult(req);
   const { email, password } = req.body;
 
   if (!errors.isEmpty()) {
     return res.status(422).json({
-      error: errors.array()[0].msg,
+      error: errors.array()[0].msg
     });
   }
 
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
-      res.status(400).json({
-        error: "USER email does not exists",
+      return res.status(400).json({
+        error: "USER email does not exists"
       });
     }
 
     if (!user.autheticate(password)) {
       return res.status(401).json({
-        error: "Email and password do not match",
+        error: "Email and password do not match"
       });
     }
 
@@ -59,16 +60,18 @@ exports.signin = (req, res) => {
     return res.json({ token, user: { _id, name, email, role } });
   });
 };
+
 exports.signout = (req, res) => {
-  res.json({
-    message: "User signout",
-  });
   res.clearCookie("token");
+  res.json({
+    message: "User signout successfully"
+  });
 };
 
-//isSignedIn route
+//protected routes
 exports.isSignedIn = expressJwt({
   secret: process.env.SECRET,
   userProperty: "auth"
 });
-  
+
+//custom middlewares
