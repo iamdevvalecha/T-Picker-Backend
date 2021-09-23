@@ -65,3 +65,10 @@ exports.signout = (req, res) => {
   });
   res.clearCookie("token");
 };
+
+//isSignedIn route
+exports.isSignedIn = expressJwt({
+  secret: process.env.SECRET,
+  userProperty: "auth"
+});
+  
